@@ -17,3 +17,16 @@ def elementwise_array_sum(a, b):
 
 def matrix_sum(a, b):
     return [[x + y for x, y in zip(row_a, row_b)] for row_a, row_b in zip(a, b)]
+
+numero = int(input("Introduce un número: "))
+potencia = int(input("Introduce una potencia: "))
+
+if potencia < 0:
+    print("No se pueden calcular potencias negativas sin decimales")
+elif potencia == 0:
+    print("Si la potencia es 0 el resultado siempre es 1")
+else:
+    resultado = 1
+    for _ in range(potencia):
+        resultado *= numero
+    print(f"{numero} elevado a {potencia} es {resultado}")
