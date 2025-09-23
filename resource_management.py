@@ -16,17 +16,31 @@ def elementwise_array_sum(a, b):
     return [[x + y for x, y in zip(row_a, row_b)] for row_a, row_b in zip(a, b)]
 
 def matrix_sum(a, b):
+    if all(isinstance(x, (int, float)) for x in a) and all(isinstance(y, (int, float)) for y in b):
+        return [x + y for x, y in zip(a, b)]
+    
     return [[x + y for x, y in zip(row_a, row_b)] for row_a, row_b in zip(a, b)]
 
-numero = int(input("Introduce un número: "))
-potencia = int(input("Introduce una potencia: "))
 
-if potencia < 0:
-    print("No se pueden calcular potencias negativas sin decimales")
-elif potencia == 0:
-    print("Si la potencia es 0 el resultado siempre es 1")
-else:
+def potencia(base, exp):
+    if exp < 0:
+        raise ValueError("No se pueden calcular potencias negativas sin decimales")
+    if exp == 0:
+        return 1
     resultado = 1
-    for _ in range(potencia):
-        resultado *= numero
-    print(f"{numero} elevado a {potencia} es {resultado}")
+    for _ in range(exp):
+        resultado *= base
+    return resultado
+
+def modulo(a, b):
+    cociente = a // b
+    producto = cociente * b
+    return a - producto
+
+def raiz_entera(numero):
+    if numero < 0:
+        raise ValueError("No se puede calcular la raíz de un número negativo")
+    a = 0
+    while (a + 1) * (a + 1) <= numero:
+        a += 1
+    return a

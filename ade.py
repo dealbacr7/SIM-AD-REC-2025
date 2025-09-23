@@ -1,9 +1,11 @@
 import resource_management as rm
 
 def main():
-    wood = [[3, 1, 2], [5, 0, 4]]
-    stone = [[2, 4, 1], [3, 2, 5]]
-    money = [[7, 5, 3], [6, 2, 8]]
+    wood = [999]
+    stone = [999]
+    money = [999]
+    obreros = [999]
+    espacio_dis = [999]
 
     sorted_wood = rm.sort_array(wood)
     sorted_stone = rm.sort_array(stone)
@@ -16,10 +18,10 @@ def main():
 
     print(f"Recursos totales ordenados y sumados: {total_resources}")
 
-    house_cost = [[1, 2, 3], [4, 5, 1], [2, 3, 5]]
-    school_cost = [[2, 0, 1], [3, 2, 4], [1, 0, 3]]
+    house_cost = [10,20,100,30]
+    school_cost = [50,100,200,200]
 
-    subsidy = [[1, 3, 2], [2, 1, 0], [3, 2, 1]]
+    subsidy = [10]
 
     new_house_cost = rm.matrix_sum(house_cost, subsidy)
     new_school_cost = rm.matrix_sum(school_cost, subsidy)
